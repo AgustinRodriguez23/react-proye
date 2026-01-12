@@ -3,7 +3,7 @@ import CartWidget from './CartWidget'
 export default function NavBar(){
 
     return (
-        <nav style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', position: 'fixed', top: 0, width: '60%', alignItems: 'center'}}>
+        <nav style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', position: 'fixed', top: 0, width: '100%', alignItems: 'center'}}>
             <h2>AllBarberShop</h2>
             <ul style={{display: 'flex', flexDirection: 'row', gap: 25}}>
                 <li style={{listStyleType: 'none'}}>

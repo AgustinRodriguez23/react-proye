@@ -1,6 +1,8 @@
 import './App.css'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
+import Item from './components/Item'
+import ItemCount from './components/ItemCount'
 
 function App() {
   return (
@@ -9,10 +11,8 @@ function App() {
         <NavBar></NavBar>
       </header>
       <section>
-        <ItemListContainer
-        nombre="Luis"
-        apellido="Lopez"
-        ></ItemListContainer>
+        <ItemCount></ItemCount>
+        <ItemListContainer></ItemListContainer>        
       </section>
     </>
   )
