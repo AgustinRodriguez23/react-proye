@@ -1,5 +1,13 @@
+import { useContext } from "react"
+import cartContext from "../context/cartContext"
+import { Link } from "react-router"
+
 export default function CartWidget(){
+    const { countItemsInCart } = useContext(cartContext)
+    
     return (
-    <img style={{paddingRight: 40}} height="25" src="../src/assets/carrito-de-compras.png"/>
+        <Link to="/Cart">
+            <span>🛒 ( {countItemsInCart() } )</span>
+        </Link>
     )
 }

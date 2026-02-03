@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
-export default function ItemCount(){
+export default function ItemCount( props ){
     const [count, setCount] = useState(1)
 
     function handleResta(){
@@ -17,7 +17,7 @@ export default function ItemCount(){
                 <span>{count}</span>
                 <button onClick={handleSuma}>+</button>
             </div>
-            <button>Agregar al carrito</button>
+            <button onClick={ () => props.onAddToCart(count)} className="add-to-cart">Agregar al carrito</button>
         </div>
     )
 }

@@ -1,0 +1,13 @@
+
+.Item-Detail {
+    border: 2px solid black;
+    border-radius: 12px;
+    padding: 8px;
+        button {
+            margin: 4px
+        }
+        p {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin: 12px;
+        }
+}
