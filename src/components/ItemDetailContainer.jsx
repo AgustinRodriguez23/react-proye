@@ -1,7 +1,7 @@
 import { useParams } from "react-router"
 import ItemCount from "./ItemCount"
 import { useEffect, useState } from "react"
-import { getItemData } from "../../data/mockService"
+import { getItemData } from "../../data/firestore"
 import { useContext } from "react"
 import cartContext from "../context/cartContext"
 
@@ -31,7 +31,6 @@ function ItemDetailContainer(){
             <p>{product.description}</p>
             <p>{product.price}</p>
             <ItemCount onAddToCart={onAddToCart}/>
-            <button onClick={ () => removeCartProduct(product.id)} >Eliminar</button>
         </div>
     )
 }
