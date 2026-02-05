@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore"
+import { products } from "./products"
 
 const firebaseConfig = {
   apiKey: "AIzaSyD0CuMA-I_qTMSvDHJDotxNK8yRPm5CHuY",
@@ -51,10 +52,17 @@ export async function createBuyOrder(buyOrderData){
     alert("gracias !!")   
 }
 
-export async function exportProductsToFirestore(){
 
-    for(let item of products){
-    delete item.id    
-    const docRef = addDoc(collection(db, "products"), item)
+export async function exportProductsToFirestore() {
+  try {
+    for (let item of products) {
+      const { id, ...productWithoutId } = item
+      const docRef = await addDoc(
+        collection(db, "products"),
+        productWithoutId
+      )
     }
+  } catch (error) {
+     (error)
+  }
 }
