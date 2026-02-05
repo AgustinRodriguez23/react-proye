@@ -1,16 +1,49 @@
-# React + Vite
+# 🛒 Barber Shop Machines – E-commerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto de e-commerce enfocado en la venta de **máquinas de barbería**, desarrollado con **React**. La aplicación permite navegar por productos, ver detalles, agregar al carrito y finalizar la compra de forma dinámica e intuitiva.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** – Librería principal para la construcción de la interfaz
+- **React Router DOM** – Navegación entre vistas
+- **Firebase** – Backend as a Service:
+  - Firestore (base de datos)
+  - Autenticación (si aplica)
+- **SweetAlert2** – Alertas personalizadas para acciones del usuario
+- **CSS / Styled Components** – Estilos de la aplicación
 
-## React Compiler
+## 📦 Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Listado dinámico de productos
+- Filtrado por categorías
+- Vista de detalle de cada producto
+- Carrito de compras
+- Control de stock
+- Finalización de compra con generación de orden
+- Alertas visuales para acciones importantes (agregar al carrito, compra exitosa, errores, etc.)
 
-## Expanding the ESLint configuration
+## 🧭 Navegación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+La aplicación utiliza **React Router** para manejar rutas como:
+
+- `/` → Home / Catálogo
+- `/category/:id` → Productos por categoría
+- `/item/:id` → Detalle del producto
+- `/cart` → Carrito de compras
+- `/checkout` → Finalizar compra
+
+## 🔥 Firebase
+
+Firebase se utiliza para almacenar los productos y las órdenes de compra.
+
+### Colecciones principales:
+- `products`
+- `orders`
+
+## 📬 Contacto
+
+¿Querés ver más proyectos o contactarte conmigo?
+
+🔗 LinkedIn: https://www.linkedin.com/in/agustin-lihuel-rodr%C3%ADguez-9968b7353/
+
+🔗 GitHub: https://github.com/AgustinRodriguez23

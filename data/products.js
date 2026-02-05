@@ -5,7 +5,7 @@ export const products = [
     price: "$406.990,00",
     category: "clipper",
     stock: 4,
-    img: "../src/assets/1.jfif",
+    img: "/images/1.jfif",
     description: "Clipper profesional con cuchilla cromada ideal para degradados. Edición negra.",
   },
   {
@@ -14,7 +14,7 @@ export const products = [
     price: "$389.990,00",
     category: "clipper",
     stock: 6,
-    img: "../src/assets/2.jfif",
+    img: "/images/2.jfif",
     description: "Clipper inalámbrica con motor potente y batería de larga duración.",
   },
   {
@@ -23,7 +23,7 @@ export const products = [
     price: "$459.990,00",
     category: "clipper",
     stock: 3,
-    img: "../src/assets/3.jfif",
+    img: "/images/3.jfif",
     description: "Clipper profesional con motor de alto torque para cortes exigentes.",
   },
   {
@@ -32,7 +32,7 @@ export const products = [
     price: "$372.500,00",
     category: "clipper",
     stock: 5,
-    img: "../src/assets/4.webp",
+    img: "/images/4.webp",
     description: "Clipper diseñada para fades suaves y cortes precisos.",
   },
   {
@@ -41,7 +41,7 @@ export const products = [
     price: "$298.990,00",
     category: "clipper",
     stock: 8,
-    img: "../src/assets/5.jfif",
+    img: "/images/5.jfif",
     description: "Clipper clásica con motor vibratorio potente y duradero.",
   },
   {
@@ -50,7 +50,7 @@ export const products = [
     price: "$489.990,00",
     category: "clipper",
     stock: 4,
-    img: "../src/assets/6.jpg",
+    img: "/images/6.jpg",
     description: "Clipper inalámbrica con cuchilla ajustable de acero inoxidable.",
   },
   {
