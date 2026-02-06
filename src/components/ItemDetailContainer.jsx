@@ -12,7 +12,7 @@ function ItemDetailContainer(){
     
     const { itemID } = useParams()
     const [product, setProduct] = useState({})
-    const { addProductToCart, removeCartProduct } = useContext(cartContext)
+    const { addProductToCart } = useContext(cartContext)
 
     function onAddToCart(count){
         alert( count + " productos agregados")
@@ -27,7 +27,7 @@ function ItemDetailContainer(){
     return(
         <div className="Item-Detail">
             <h2>{product.title}</h2>
-            <img src={`/images/${product.img}`} alt="" style={{width: 225}}/>
+            <img src={`/${product.img}`} alt="" style={{width: 225}}/>
             <p>{product.description}</p>
             <p>{product.price}</p>
             <ItemCount onAddToCart={onAddToCart}/>

@@ -1,0 +1,24 @@
+
+h2 {
+    color: rgb(214, 218, 15)
+}
+
+.itemCart {
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+
+    section {
+        margin: 8px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.CancelForm {
+    background-color: red;
+    margin: 8px;
+}

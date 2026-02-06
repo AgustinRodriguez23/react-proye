@@ -1,6 +1,7 @@
 import { useContext, useState } from "react"
 import cartContext from "../context/cartContext"
 import { createBuyOrder } from "../../data/firestore"
+import './CartContainer.css'
 
 
 export default function CartContainer(){
@@ -12,14 +13,15 @@ export default function CartContainer(){
         email: ""
     })
 
-    function handleCheckout(){
+async function handleCheckout(){
         const buyOrder = {
         buyer: formData,
         phone: "1187328282",
         total: 450,
         date: new Date()
         }
-        createBuyOrder(buyOrder)
+        const orderId = await createBuyOrder(buyOrder)
+        Swal.fire("SweetAlert2 is working!");
     }
 
 
@@ -47,11 +49,11 @@ function handleReset(){
         <>
         <div>
             <h2>Tu carrito de compras</h2>
-            <div>
+            <div className="itemCart">
                 {
-                    cart.map( item => <section style={{display: "flex", flexDirection: "row", alignContent: "center", alignItems: "center", gap: 10}}>
+                    cart.map( item => <section style={{display: "flex", flexDirection: "row", alignContent: "center", alignItems: "center", gap: 10, flexWrap: "wrap"}}>
                         { item.title }
-                        <img style={{width: 150}} src={item.img} alt="" /> 
+                        <img style={{width: 150}} src={item.img} alt=""/> 
                         <p>{ item.price }</p>
                         <p>Cantidad: { item.count}</p>
                          <button onClick={ () => removeCartProduct(item.id)}>Eliminar del carrito</button>
@@ -89,9 +91,10 @@ function handleReset(){
                     name="phone"
                     value={ formData.phone }/>
                 </label>
-                <br />
-                <button onClick={handleCheckout}>Confirmar compra</button>
-                <button type="reset" onClick={handleReset}>Cancelar</button>
+                    <div>
+                        <button onClick={handleCheckout}>Confirmar compra</button>
+                        <button className="CancelForm" type="reset" onClick={handleReset}>Cancelar</button>
+                    </div>
             </form>
         </div>
         </>

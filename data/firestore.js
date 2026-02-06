@@ -29,7 +29,6 @@ export async function getData(){
 export async function getItemData(itemID){
     const documentRef = doc(db, "products", itemID)
     const docSnapshot = await getDoc(documentRef)
-    console.log(docSnapshot)
     const docData = docSnapshot.data()
     const docDataWithID = { ...docData, id: docSnapshot.id}
     return docDataWithID
@@ -49,7 +48,8 @@ export async function getCategoryData(categoryID){
 export async function createBuyOrder(buyOrderData){
     const collectionRef = collection(db, "orders")
     const docRef = await addDoc(collectionRef, buyOrderData)
-    alert("gracias !!")   
+
+    return docRef.id
 }
 
 
