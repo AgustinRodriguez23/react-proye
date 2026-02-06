@@ -27,6 +27,11 @@ async function handleCheckout(){
 
 function handleSubmit(event){
     event.preventDefault()
+    setFormData({
+        username: "",
+        phone: "",
+        email: "" 
+    })
 }    
 
 function handleChange(event){
