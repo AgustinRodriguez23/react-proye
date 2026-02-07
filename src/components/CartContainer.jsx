@@ -60,19 +60,6 @@ function handleReset(){
     })
 }
 
-console.log("CART 👉", cart)
-
-cart.forEach(item => {
-  console.log(
-    "price:", item.price,
-    "type:", typeof item.price,
-    "count:", item.count,
-    "type:", typeof item.count
-  )
-})
-
-
-
     return(
         <>
         <div>
