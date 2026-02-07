@@ -11,3 +11,8 @@
             margin: 12px;
         }
 }
+
+.alert {
+    color: blue;
+    background-color: aqua;
+}

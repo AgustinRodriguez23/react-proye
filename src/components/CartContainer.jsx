@@ -21,7 +21,6 @@ async function handleCheckout(){
         date: new Date()
         }
         const orderId = await createBuyOrder(buyOrder)
-        Swal.fire("SweetAlert2 is working!");
     }
 
 

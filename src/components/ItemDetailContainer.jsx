@@ -4,9 +4,19 @@ import { useEffect, useState } from "react"
 import { getItemData } from "../../data/firestore"
 import { useContext } from "react"
 import cartContext from "../context/cartContext"
+import Swal from "sweetalert2"
 
 import './ItemDetail.css'
 
+const sweetAlert=()=>
+    Swal.fire({
+  title: "Producto agregado al carrito!",
+  icon: "success",
+  draggable: true,
+  color: "black",
+  background: "aqua"
+  
+});
 
 function ItemDetailContainer(){
     
@@ -15,7 +25,7 @@ function ItemDetailContainer(){
     const { addProductToCart } = useContext(cartContext)
 
     function onAddToCart(count){
-        alert( count + " productos agregados")
+        sweetAlert()
         addProductToCart(product, count)
     }
 
@@ -30,7 +40,7 @@ function ItemDetailContainer(){
             <img src={product.img} alt="" style={{width: 225}}/>
             <p>{product.description}</p>
             <p>{product.price}</p>
-            <ItemCount onAddToCart={onAddToCart}/>
+            <ItemCount stock={product.stock} onAddToCart={onAddToCart}/>
         </div>
     )
 }
