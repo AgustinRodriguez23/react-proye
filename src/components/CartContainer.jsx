@@ -2,11 +2,21 @@ import { useContext, useState } from "react"
 import cartContext from "../context/cartContext"
 import { createBuyOrder } from "../../data/firestore"
 import './CartContainer.css'
+import Swal from "sweetalert2"
+
+
+const alertCheckout = (orderId) =>
+  Swal.fire({
+    title: "¡Compra realizada con éxito! 🎉",
+    icon: "success",
+    text: `Tu número de orden es ${orderId}`,
+    footer: "RECIBIRAS LOS DETALLES DE TU COMPRA EN TU EMAIL",
+  })
+
 
 
 export default function CartContainer(){
-    const { cart } = useContext(cartContext)
-    const { removeCartProduct } = useContext(cartContext)
+    const { cart, removeCartProduct, getTotalPrice, clearCart } = useContext(cartContext)
     const [formData, setFormData] = useState({
         username: "",
         phone: "",
@@ -16,11 +26,13 @@ export default function CartContainer(){
 async function handleCheckout(){
         const buyOrder = {
         buyer: formData,
-        phone: "1187328282",
-        total: 450,
+        phone: formData.phone,
+        total: getTotalPrice(),
         date: new Date()
         }
         const orderId = await createBuyOrder(buyOrder)
+        clearCart()
+        alertCheckout(orderId)
     }
 
 
@@ -48,6 +60,18 @@ function handleReset(){
     })
 }
 
+console.log("CART 👉", cart)
+
+cart.forEach(item => {
+  console.log(
+    "price:", item.price,
+    "type:", typeof item.price,
+    "count:", item.count,
+    "type:", typeof item.count
+  )
+})
+
+
 
     return(
         <>
@@ -55,14 +79,14 @@ function handleReset(){
             <h2>Tu carrito de compras</h2>
             <div className="itemCart">
                 {
-                    cart.map( item => <section style={{display: "flex", flexDirection: "row", alignContent: "center", alignItems: "center", gap: 10, flexWrap: "wrap"}}>
+                    cart.map( item => <section key={item.id} style={{display: "flex", flexDirection: "row", alignContent: "center", alignItems: "center", gap: 10, flexWrap: "wrap"}}>
                         { item.title }
                         <img style={{width: 150}} src={item.img} alt=""/> 
                         <p>{ item.price }</p>
                         <p>Cantidad: { item.count}</p>
                          <button onClick={ () => removeCartProduct(item.id)}>Eliminar del carrito</button>
                     </section>)
-                }
+                } <h3>Total: ${getTotalPrice()}</h3>
             </div>
             
         </div>

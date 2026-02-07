@@ -12,7 +12,6 @@
         }
 }
 
-.alert {
-    color: blue;
-    background-color: aqua;
+.swal2-popup {
+    list-style-type: square;
 }

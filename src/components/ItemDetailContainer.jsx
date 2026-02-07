@@ -9,14 +9,7 @@ import Swal from "sweetalert2"
 import './ItemDetail.css'
 
 const sweetAlert=()=>
-    Swal.fire({
-  title: "Producto agregado al carrito!",
-  icon: "success",
-  draggable: true,
-  color: "black",
-  background: "aqua"
-  
-});
+    Swal.fire("Producto agregado al carrito!!");
 
 function ItemDetailContainer(){
     
